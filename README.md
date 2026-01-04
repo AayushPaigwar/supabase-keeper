@@ -112,20 +112,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <a href="https://linkedin.com/in/AayushPaigwar">LinkedIn</a>
 
 </div>
-
-## Supabase Config APIs
-
-- **Add**: POST `/api/supabase/add` - Add new Supabase project
-- **List**: GET `/api/supabase/list` - Get user's projects
-- **Delete**: DELETE `/api/supabase/delete/:id` - Remove project
-
-## Cron Job
-
-The cron job runs at `/api/cron/ping` and can be triggered by:
-- Vercel Cron Jobs
-- External cron services
-- Manual execution
-
-## Deployment
-
-Works on Vercel, Cloud Run, or any VPS. The database is hosted on Neon Postgres!
