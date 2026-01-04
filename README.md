@@ -108,7 +108,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Made with ❤️ for Developers by Developer**
 
 <a href="https://github.com/AayushPaigwar">GitHub</a> •
-<a href="https://twitter.com/AayushPaigwar">Twitter</a> •
-<a href="https://linkedin.com/in/AayushPaigwar">LinkedIn</a>
+<a href="https://twitter.com/Aayush27_11">Twitter</a> •
+<a href="https://www.linkedin.com/in/aayush-paigwar">LinkedIn</a>
 
 </div>
