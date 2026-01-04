@@ -62,6 +62,12 @@ export default function Home() {
             Automatically ping your Supabase projects every 24 hours to keep them
             alive and prevent pausing due to inactivity. <strong>100% Open Source, Free Forever.</strong>
           </p>
+          <div className="flex justify-center mb-8">
+            <div className="flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full text-sm font-medium text-green-700">
+              <Shield className="w-4 h-4" />
+              <span>All data encrypted & secure</span>
+            </div>
+          </div>
           <div className="flex gap-4 justify-center">
             <Link
               href="/signup"
@@ -98,10 +104,9 @@ export default function Home() {
               <div className="w-16 h-16 bg-[#016239] rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Secure & Reliable</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Data is Encrypted</h3>
               <p className="text-gray-600">
-                Your Supabase credentials are stored securely with encrypted authentication.
-                We only ping, never modify your data.
+                Your Supabase keys are encrypted and never stored in plain text.
               </p>
             </div>
             <div className="text-center p-6">
