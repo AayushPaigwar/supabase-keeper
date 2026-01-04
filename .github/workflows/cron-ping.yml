@@ -1,0 +1,47 @@
+name: Cron Ping Supabase Keeper
+
+on:
+  schedule:
+    - cron: "30 18 * * *" # Runs daily at 18:30 UTC -> 00:00 IST (12:00 AM IST)
+  workflow_dispatch: {}
+
+jobs:
+  seed-and-ping:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      APP_URL: ${{ secrets.APP_URL }}
+      NODE_ENV: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Seed/check database (ensure users and supabaseconfigs)
+        run: node scripts/seed.js
+
+      - name: Call cron endpoint (force) and capture response
+        if: env.APP_URL != ''
+        run: |
+          echo "Calling cron endpoint: $APP_URL/api/cron/ping?force=true"
+          echo "Request time: $(date --utc)" > cron_response.txt
+          # Verbose curl to capture headers and body for debugging
+          curl -i -v --retry 3 --max-time 30 "$APP_URL/api/cron/ping?force=true" >> cron_response.txt 2>&1 || echo 'Cron ping failed' >> cron_response.txt
+          echo "--- output ---"
+          cat cron_response.txt
+
+      - name: Upload cron response artifact for debugging
+        uses: actions/upload-artifact@v4
+        with:
+          name: cron-response
+          path: cron_response.txt

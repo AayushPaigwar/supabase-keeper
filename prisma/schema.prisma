@@ -1,0 +1,41 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id           String   @id @default(uuid())
+    email        String   @unique
+    passwordHash String   @map("password_hash")
+    name         String?
+    isActive     Boolean  @default(true)
+    createdAt    DateTime @default(now()) @map("created_at")
+    updatedAt    DateTime @updatedAt @map("updated_at")
+
+    supabaseConfigs SupabaseConfig[]
+
+    @@map("User")
+}
+
+model SupabaseConfig {
+    id           String    @id @default(uuid())
+    userId       String    @map("user_id")
+    projectName  String    @map("project_name")
+    supabaseUrl  String    @map("supabase_url")
+    anonKey      String    @map("anon_key")
+    schemaSql    String    @map("schema_sql")
+    lastPingedAt DateTime? @map("last_pinged_at")
+    isActive     Boolean   @default(true) @map("is_active")
+    createdAt    DateTime  @default(now()) @map("created_at")
+    updatedAt    DateTime  @updatedAt @map("updated_at")
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@index([userId])
+    @@index([isActive])
+    @@map("SupabaseConfig")
+}

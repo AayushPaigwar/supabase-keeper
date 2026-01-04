@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="6" fill="#016239"/>
+  <!-- Heartbeat/Activity line representing keeping alive -->
+  <path d="M6 16L10 16L12 12L14 20L16 8L18 16L20 14L22 18L26 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Small dot representing active monitoring -->
+  <circle cx="16" cy="16" r="1" fill="white"/>
+</svg>
