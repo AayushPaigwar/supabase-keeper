@@ -116,7 +116,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Supabase Config APIs
 
 - **Add**: POST `/api/supabase/add` - Add new Supabase project
-- **List**: GET `/api/supabase/list` - Get users projects
+- **List**: GET `/api/supabase/list` - Get user's projects
 - **Delete**: DELETE `/api/supabase/delete/:id` - Remove project
 
 ## Cron Job
