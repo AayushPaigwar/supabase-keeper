@@ -24,6 +24,14 @@
   </p>
 </div>
 
+_<a href="https://peerlist.io/aayushpaigwar/project/supabase-keeper" target="_blank" rel="noreferrer">
+				<img
+					src="https://peerlist.io/api/v1/projects/embed/PRJHP6LREMKAMLNQA2MKRRDJQN77P8?showUpvote=true&theme=dark"
+					alt="Supabase Keeper"
+					style="width: auto; height: 72px;"
+				/>
+			</a>_
+
 ---
 
 ## ✨ Features
