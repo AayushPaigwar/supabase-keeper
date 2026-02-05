@@ -39,9 +39,3 @@ jobs:
           curl -i -v --retry 3 --max-time 30 "$APP_URL/api/cron/ping?force=true" >> cron_response.txt 2>&1 || echo 'Cron ping failed' >> cron_response.txt
           echo "--- output ---"
           cat cron_response.txt
-
-      - name: Upload cron response artifact for debugging
-        uses: actions/upload-artifact@v4
-        with:
-          name: cron-response
-          path: cron_response.txt
